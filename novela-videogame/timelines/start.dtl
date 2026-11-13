@@ -1,0 +1,16 @@
+[background arg="res://fondos/detectives.jpeg" fade="0.0"]
+Viernes 09 de octubre - 5\:30
+Mujer enta a la oficina de los detectives, se sienta melancólicamente y se queda mirando a la pantalla del ordenador, después suspira y se aproxima hacia el escritorio de Valentine.
+Sofia (normal): Tenemos que hacer algo ¡Sabes que no fue un simple robo!
+Sofia (confundida): Lo que le pasó a mi hermano está relacionado con los otros casos. Encontré esto en la escena del crimen (imagen del origami de papel)
+- Darle una palmada en el hombro y ayudarla a controlar sus emociones
+	set {Confianza} += 1.0
+	set {Decision1} = 1.0
+- ¡SOFIA! deja que los encargados del caso hagan su trabajo.
+	set {Confianza} -= 1.0
+	set {Decision1} = 2.0
+- (Valentine se pone serio) Tienes razón, hay que hacer algo extraoficialmenteeeeeee.
+	set {Confianza} += 2.0
+	set {Decision1} = 3.0
+Sofia (feliz): Te invito a un trago a la noche para hablar más al respecto
+jump escena2/

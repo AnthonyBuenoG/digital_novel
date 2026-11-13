@@ -1,0 +1,44 @@
+[background arg="res://fondos/casa.jpeg" fade="0.0"]
+Sábado 10 de octubre - 8\:00 am
+Sofía abre la puerta con manos temblorosas, la casa huele a encierro. En el estudio hay una grulla de papel sobre la mesa y un reloj antiguo en la pared.
+if {Decision2} == 1.0:
+	Valentine saca el origami y revisa el número a lápiz mientras Sofia observa las paredes.
+	Valentine (cuestionando): Tres dígitos\: 7-4-1. Quizás abre algo.
+elif {Decision2} == 2.0:
+	Sofia: Aquí fue la última vez que lo vi. Ese es el reloj.
+else:
+	Sofía trae dos cafés y se ve más tranquila.
+	Sofia: Dormí un poco. Gracias por anoche.
+Valentine descuelga el reloj. Detrás hay una caja fuerte de tres dígitos
+- Probar el 7-4-1 del origami | [if {Decision2} == 1.0]
+	La caja se abre con un clic.
+	set {Pistas} += 1.0
+	jump caja_abierta
+- Preguntarle a Sofía por una fecha importante de su hermano.
+	Sofia (sorprendida): Nuestro cumpleaños... 1-2-9.
+	La caja se abre al segundo intento.
+	set {Confianza} += 2.0
+	jump caja_abierta
+- Forzar la cerradura con una navaja
+	Suena una alarma slienciosa. Un LED rojo parpadea en la caja.
+	set {Peligto} += 1.0
+	jump caja_abierta
+- Pedirle a Sofia que lo intente ella
+	Sofia (confundida): Él siempre usaba la misma clave... 4-0-8.
+	set {Confianza} += 1.0
+	jump caja_abierta
+label caja_abierta
+Dentro hay una libreta con tres nombre y una llave con la etiqueta "Muelle 9".
+- Leerla ahí mismo.
+	Valentine hojea la libreta con calma. Entre los tres nombres, uno está tachado con rojo
+	set {Pistas} += 1.0
+	Afuera, un auto se detiene frente a la casa.
+- Fotografiar las paginas y guardarla en su chaqueta.
+	Valentine fotografía cada página con el celular y guarda la libreta en su chaqueta.
+	set {Pistas} += 1.0
+- Dársela a Sofía para que decida.
+	Sofía sostiene la libreta con ambas manos. Respira hondo.
+	Sofia (feliz): Gracias por confiar en mí.
+	set {Confianza} += 1.0
+Desde la ventana, el hombre con una gorra baja de un auto y mira hacia la casa.
+[end_timeline]

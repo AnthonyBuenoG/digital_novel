@@ -1,0 +1,51 @@
+[background arg="res://fondos/club.jpg" fade="0.0"]
+Viernes 09 de octubre - 9\:30 pm
+Sofía se encuentra con Valentine en el club tomando unos tragos. La música suena baja en la zona de la barra; hay luces ámbar y poca gente. Sofía ya tiene una copa casi vacía frente a ella y no ha dejado de girar el vaso entre los dedos
+if {Decision1} == 1.0:
+	Sofía levanta la vista y sonríe a medias; sus hombros estan menos tensos que en la oficina
+	Sofia (triste): Gracias por esta tarde. Nadie en la comisaría me trató como a una persona, solo como a "la familiar de la victima".
+	Valentine (normal): Eres más que eso. Cúentame todo, desde el principio.
+elif {Decision1} == 2.0:
+	Sofía ni lo mira cuando se sienta. Pide otra copa antes de que Valentine alcance a pedir la suya.
+	Sofia (normal): Casi no vengo. Esta tarde me hablaste como si estorbara.
+	Valentine (normal): Fui duro... Estaba presionado, pero no debí gritarte.
+	Sofia (triste): No, no está bien. Pero estoy aquí por que necesito tu ayuda, no una pelea. Solo no me vuelvas a callar así\: estoy hablando por mi hemano y alguien tiene que escucharme.
+else:
+	Sofia se acerca a Valentine en cuanto lo ve y mira alrededor para asegurarse de que nadie los escucha
+	Sofia (normal): Sabía que contigo era diferente. Si esto se sabe en la oficina, te metes en problemas.
+	Valentine (normal): Que se metan. Dime qué sabes y nos organizamos.
+Sofía saca el origami de su bolso, lo deja sobre la barra con cuidado y lo mira como si pesara más de lo que parece.
+Sofia: Es una grulla. En la escena del robo de mi hermano habia una igual, sobre la mesa de su estudio.
+Sofia (confundida): Leí los informes de los otros casos que salieron en las noticias. En todos aparece una figura distinta\: un zorro en el primero, un barco en el segundo...
+Valentine (sorprendido): Y la policía nunca lo relacionó.
+Sofia (confundida): Dijeron que era "una coincidencia". Hay tres figuras distintas. Eso no es una coincidencia.
+Sofía respira hondo y se termina la copa. Valentine nota que le timeblan un poco las manos.
+Sofia (normal): Dime qué quieres hacer. Yo ya no puedo quedarme esperando.
+- Pedirle el origami y examinarlo con atención bajo la luz de la barra.
+	Valentine toma la grulla y la inclina hacia la luz. Al desdoblar con cuidado una de las alas aparecen unos trazos finos de tinta.
+	Valentine (confundido): No es papel de origami. Es papel de oficina, de buena calidad. Tiene una marca de agua y... mira, un número escrito a lápiz
+	Sofia (confundida): ¿Un número? No lo vi. ¿Qué significa?
+	Valentine (confundido): Todavía no lo sé. Pero quien lo dejó quería que alguien lo encontrara.
+	set {Decision2} = 1.0
+	set {Pistas} = 1.0
+- Dejar el papel a un lado y preguntarle por su hermano: ¿en qué andaba metido?
+	Sofía aparta la mirada. Por un momento parece que no va a contestar.
+	Sofia (normal): Estaba raro desde hacía unas semanas. Trabajaba hasta tarde, no contestaba mis llamadas...
+	Sofia (normal): La última vez que hablamos me dijo\: "Si me pasa algo, revisa lo que hay detrás del reloj".
+	Valentine (cuestionando): ¿Y has mirado detrás del reloj?
+	Sofia (cuestionando): No. No he podido volver a su casa desde esa noche. ¿Vendrías conmigo?
+	set {Decision2} = 2.0
+- Pedir otra ronda y decirle que respire un momento: esta noche no hay que resolverlo todo.
+	Valentine hace una seña al barman y desliza una copa hacia Sofia. Ella suelta una risa corta y cansada.
+	Sofia (triste): Eres la primera persona en una semana que no me pregunta cómo estoy.
+	Valentine (feliz): Porque ya lo sé. Hoy no estás sola; mañana nos ponemos a trabajar.
+	Sofia se relaja, apoya la barbilla en la mano y por primera vez sonríe de verdad. Desde una mesa al fondo un hombre con una gorra baja el celular y los observa un segundo más.
+	set {Decision2} = 3.0
+	set {Confianza} += 1.0
+El celular de Valentine vibra sobre la barra\: un número desconocido. Es una foto\: otra figura de pape, esta vez un pájaro de añas abiertas, colocada sobre la puerta de su auto.
+Anonimo: Mensaje anónimo\: Dejen de buscar.
+Sofia lee el mensaje por encima del hombro de Valentine. El color se le va el rostro.
+Sofia (sorprendida): Nos están viendo, Valentine. Soben donde estamos.
+Valentine (alerta): (en voz baja) Quédate cerca de mí. Salimos por la puerta de atrás.
+jump escena3/
+[end_timeline]
